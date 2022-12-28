@@ -23,7 +23,7 @@ app.post("/", function(req, res){
     var firstNameLen = firstName.length;
     var lastNameLen = lastName.length;
     var emailLen = email.length;
-    if (firstNameLen <= 3 || lastNameLen <= 3 || emailLen === 0) {
+    if (firstNameLen <= 3 || lastNameLen < 1 || emailLen === 0) {
         res.sendFile(__dirname + "/errorMsg.html");
     }
     else {
