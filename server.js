@@ -22,11 +22,9 @@ app.post("/", function(req, res){
     const email = String(req.body.email);
     var firstNameLen = firstName.length;
     var lastNameLen = lastName.length;
-    if (firstNameLen <= 3) {
+    var emailLen = email.length;
+    if (firstNameLen <= 3 || lastNameLen <= 3 || emailLen === 0) {
         res.sendFile(__dirname + "/errorMsg.html");
-    }
-    else if (lastNameLen <= 3) {
-       res.sendFile(__dirname + "/errorMsg.html");
     }
     else {
         res.sendFile(__dirname + "/success.html");
